@@ -9,7 +9,7 @@ Price:|  "7"|  "0"|  "6"|  "0"|  "0"|  "0"|  "0"
 ! COMPONENT !! SOURCE !! PRICRE !! LINK
 |-
 ! Row header 1
-| VELCRO || Data 2
+| VELCRO || TARGET
 |-
 ! Row header 2
 | Data 3 || Data 4
