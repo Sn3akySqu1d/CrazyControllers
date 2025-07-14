@@ -69,13 +69,20 @@ class ConfigWindow(QWidget):
 
         self.setLayout(self.layout)
         self.gesture_action_map = gesture_action_map
+        self.parent = parent
+        if self.parent:
+            self.parent.prediction_label.hide()
+
+    def closeEvent(self, event):
+        if self.parent:
+            self.parent.prediction_label.show()
+        event.accept()
 
     def save_config(self):
         for gesture, dropdown in self.dropdown_map.items():
             self.gesture_action_map[gesture] = dropdown.currentText()
         self.close()
 
-# GUI: Real-time Prediction
 class PredictionWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -128,7 +135,7 @@ class PredictionWindow(QWidget):
 
         self.automation_enabled = False
         self.last_action_time = 0
-        self.action_cooldown = 1000  # ms
+        self.action_cooldown = 1000
 
         self.gesture_action_map = {
             "rest": "None",

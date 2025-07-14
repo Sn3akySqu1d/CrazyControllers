@@ -25,7 +25,7 @@ while line <= samples:
     data = dataString[0:][:-2]
 
     readings = data.split(",")
-    readings.append("Thumb")
+    readings.append("Rest")
     if (len(readings) == 8 and readings[0] != ""):
         sensor_data.append(readings)
         print(line)
