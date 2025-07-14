@@ -1,5 +1,7 @@
 # Crazy Controllers
 
+# *Fully configurable glove machine learning computer interface and joystick*
+
 ARE YOU FINDING GAMES TO HARD?
 DO YOU STRUGGLE WITH ALL THOSE EXTRA KEYS?
 DO YOU WANNA FEEL SPIRITUALLY CONNECTED TO YOUR SCREEN?
@@ -12,7 +14,7 @@ Crazy controllers presents two unique ways of controlling the game.
 
 ## THE GLOVE.
 
-Inspired by the Nintendo Power Glove we created a gauntlet that is able to recognise different gestures and the position of your hand and recognise the pose your hand is in. Allowing you to control your computer and games in ways never before seen making everyday more fun.
+Inspired by the Nintendo Power Glove we created a gauntlet that is able to recognise different gestures and the position of your hand and recognise the pose your hand is in using an artificial neural network. Allowing you to control your computer and games in ways never before seen making everyday more fun.
 
 ![alt text](./images/image-4.png)
 
