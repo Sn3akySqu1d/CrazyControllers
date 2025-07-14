@@ -8,6 +8,8 @@ Well do we have the product for you with crazy controllers.
 
 Crazy controllers presents two unique ways of controlling the game.
 
+![](./images/demo.jpeg)
+
 ## THE GLOVE.
 
 Inspired by the Nintendo Power Glove we created a gauntlet that is able to recognise different gestures and the position of your hand and recognise the pose your hand is in. Allowing you to control your computer and games in ways never before seen making everyday more fun.
