@@ -12,13 +12,14 @@ from PyQt5.QtCore import QTimer
 classes = []
 arduino_port = "COM13"
 
-dataset = pd.read_csv('Firmware/Dataset.csv')
+dataset = pd.read_csv('CrazyControllers/Firmware/Dataset.csv')
 X = dataset.iloc[:, :-1].values 
 y = dataset.iloc[:, -1].values
 
-for label in y:
-    if label not in classes:
-        classes.append(label)
+label_encoder = LabelEncoder()
+y_encoded = label_encoder.fit_transform(y)
+classes = list(label_encoder.classes_)
+
 numClasses = len(classes)
 print(classes)
 
@@ -34,7 +35,7 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 ann = tf.keras.models.Sequential([
-    tf.keras.layers.Dense(units=10, activation='relu'),
+    tf.keras.layers.Dense(units=7, activation='relu'),
     tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Dense(units=128, activation='relu'),
     tf.keras.layers.Dropout(0.5),
@@ -59,7 +60,7 @@ class PredictionWindow(QWidget):
 
         self.layout = QVBoxLayout()
 
-        self.prediction_label = QLabel("Prediction: ", self)
+        self.prediction_label = QLabel("Neural Network Prediction: ", self)
         self.layout.addWidget(self.prediction_label)
 
         self.progress_bars = []
@@ -121,7 +122,7 @@ class PredictionWindow(QWidget):
             dataString = getData.decode('utf-8').rstrip()
             readings = dataString.split(",")
 
-            if len(readings) == 10 and readings[0] != '':
+            if len(readings) == 7 and readings[0] != '':
                 readings = np.array(readings, dtype=float).reshape(1, -1)
                 readings = sc.transform(readings)
 
@@ -138,7 +139,7 @@ class PredictionWindow(QWidget):
 
                 final_prediction = classes[prediction_class_index]
                 final_probability = detection[0][prediction_class_index] * 100
-                self.prediction_label.setText(f"Prediction: {final_prediction} ({final_probability:.2f}%)")
+                self.prediction_label.setText(f"Neural Network Prediction: {final_prediction} ({final_probability:.2f}%)")
 
                 if all(value == 100 for value in self.progress_values):
                     self.timer.stop()
@@ -230,9 +231,9 @@ class CollectionWindow(QWidget):
             dataString = getData.decode('utf-8').rstrip()
             readings = dataString.split(",")
             
-            if len(readings) == 16 and readings[0] != '':
+            if len(readings) == 7 and readings[0] != '':
                 readings.append(self.gesture_name)
-                with open('Main/Dataset2.csv', 'a') as f:
+                with open('CrazyControllers/Firmware/Dataset.csv', 'a') as f:
                     f.write(','.join(readings) + '\n')
                     
                 self.sample_count += 1

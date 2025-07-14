@@ -29,7 +29,7 @@ void loop(void) {
 
   Serial.print(slider1); Serial.print(",");
   Serial.print(slider2); Serial.print(",");
-  Serial.print(slider3); Serial.print(",")
+  Serial.print(slider3); Serial.print(",");
   Serial.println(slider4);
 
 }
