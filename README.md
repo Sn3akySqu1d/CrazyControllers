@@ -1,6 +1,6 @@
 # Crazy Controllers
 
--Fully configurable,glove machine learning computer interface-
+# -Fully configurable glove machine learning computer interface and joystick
 
 ARE YOU FINDING GAMES TO HARD?
 DO YOU STRUGGLE WITH ALL THOSE EXTRA KEYS?
