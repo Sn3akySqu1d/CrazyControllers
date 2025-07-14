@@ -13,7 +13,7 @@
 #define TFT_DC 17
 
 byte analogPins[] = {39, 36};
-byte digitalPins[] = {4, 26, 25};
+byte digitalPins[] = {4};
 byte digitalBitmappedPins[] = {};
 
 #define ANALOG_REFERENCE DEFAULT
@@ -123,15 +123,15 @@ void loop() {
 
   int z = digitalRead(Z);
 
-  Serial.printf("%d,%d,%d\n", ibusX, ibusY, !z);
+  //Serial.printf("%d,%d,%d\n", ibusX, ibusY, !z);
   
-  //ibus.begin();
+  ibus.begin();
   
-  //ibus.write(ibusY);
-  //ibus.write(ibusX);
-  //ibus.write(z == LOW ? 2000 : 1000);
+  ibus.write(ibusY);
+  ibus.write(ibusX);
+  ibus.write(z == LOW ? 2000 : 1000);
 
-  //ibus.end();
+  ibus.end();
 
   delay(100);
 
