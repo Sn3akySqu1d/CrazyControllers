@@ -9,9 +9,6 @@
 #define Y 36
 #define Z 4
 
-#define BUTTON_1 26
-#define BUTTON_2 25
-
 #define TFT_CS 5
 #define TFT_DC 17
 
@@ -41,8 +38,6 @@ int gridSize = 25;
 void setup() {
   pinMode(INTERNAL_LED, OUTPUT);
   pinMode(Z, INPUT_PULLUP);
-  pinMode(BUTTON_1, INPUT_PULLUP);
-  pinMode(BUTTON_2, INPUT_PULLUP);
   Serial.begin(115200);
 
   tft.initR(INITR_BLACKTAB);  
@@ -127,21 +122,16 @@ void loop() {
   }
 
   int z = digitalRead(Z);
-  int b1 = digitalRead(BUTTON_1);
-  int b2 = digitalRead(BUTTON_2);
 
-  //Serial.printf("%d,%d,%d,%d,%d,%d,%d\n", ibusX, ibusY, !z, !b1, !b2);
+  Serial.printf("%d,%d,%d\n", ibusX, ibusY, !z);
   
-  ibus.begin();
+  //ibus.begin();
   
-  ibus.write(ibusY);
-  ibus.write(ibusX);
-  ibus.write(z == LOW ? 2000 : 1000);
+  //ibus.write(ibusY);
+  //ibus.write(ibusX);
+  //ibus.write(z == LOW ? 2000 : 1000);
 
-  ibus.write(b1 == LOW ? 2000 : 1000);
-  ibus.write(b2 == LOW ? 2000 : 1000);
-
-  ibus.end();
+  //ibus.end();
 
   delay(100);
 

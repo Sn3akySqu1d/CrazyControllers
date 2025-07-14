@@ -2,11 +2,25 @@
 
 ## About this
 
--- description goes here brrr --
+In combination with the gloves, a more portable companion was developed. We went on a little sidequest to also build this cute cube controller using an ESP32 microcontroller, and connected it to a generic joystick breakout module and a 1.8" 160x128 LCD Display. The joystick is controllable in both X and Y axes and has a switch you can click, similar to thumbsticks you'd find on modern controllers.
+
+Getting this to work was a bit tricky since ESP32s don't do USB HID natively (the protocol for controller input), so we experimented with serial feeding via IBus to send the joystick data over serial and used vJoy and vJoySerialFeeder to turn it into a virtual joystick controller that a laptop recognises.
+
+![](./images/vjoysf.png)
+
+Calibrating the joysticks was super annoying, they never centre exactly and constantly drift (it drifts just by looking at it T-T), so we mapped readings to between 1000 and 2000 (~1500 centre, with a deadzone). The screen displays uptime and a cool live joystick visualiser (perfect for crying at the sight of stick drift :sob:).
+
+![](./images/joystick_serial_plotter.png)
 
 ## Preview
 
--- pics goes here --
+### Glove
+
+### Joystick
+
+![](./images/joystick_top_view.jpeg)
+
+![](./images/joystick_oled_preview.jpeg)
 
 ## BOM
 
