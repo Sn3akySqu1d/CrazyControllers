@@ -43,12 +43,12 @@ ser = serial.Serial(arduino_port, 9600)
 time.sleep(5)
 
 class ConfigWindow(QWidget):
-    def __init__(self, gesture_action_map, gestures, parent=None):
+    def __init__(self, gesture_action_map, gestures, parent_window, parent=None):
         super().__init__(parent)
         self.setWindowTitle("Configure Gesture Actions")
         self.setGeometry(150, 150, 400, 300)
         self.layout = QVBoxLayout()
-         
+        self.parent_window = parent_window
         self.dropdown_map = {}   
         actions = ["None", "left", "right", "click", "space", "scroll_up", "scroll_down"]
 
@@ -69,19 +69,12 @@ class ConfigWindow(QWidget):
 
         self.setLayout(self.layout)
         self.gesture_action_map = gesture_action_map
-        self.parent = parent
-        if self.parent:
-            self.parent.prediction_label.hide()
-
-    def closeEvent(self, event):
-        if self.parent:
-            self.parent.prediction_label.show()
-        event.accept()
 
     def save_config(self):
         for gesture, dropdown in self.dropdown_map.items():
             self.gesture_action_map[gesture] = dropdown.currentText()
         self.close()
+        self.parent_window.show()
 
 class PredictionWindow(QWidget):
     def __init__(self):
@@ -166,6 +159,7 @@ class PredictionWindow(QWidget):
         self.automation_button.setText("Disable Control" if self.automation_enabled else "Enable Control")
 
     def open_config_window(self):
+        self.hide()
         self.config_window = ConfigWindow(self.gesture_action_map, classes, self)
         self.config_window.show()
 
