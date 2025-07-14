@@ -28,7 +28,7 @@ The glove uses an artificial neural network built in tensorflow to classify betw
 
 ## THE JOYSTICK.
 
-Complementing the globes, a more portable companion was developed. We went on a little sidequest to also build this cute cube controller using an ESP32 microcontroller, and connected it to a generic joystick breakout module and a 1.8" 160x128 OLED Display. The joystick is controllable in both X and Y axes and has a switch you can click, similar to thumbsticks you'd find on modern controllers.
+Complementing the globes, a more portable companion was developed. We went on a little sidequest to also build this cute cube controller using an ESP32 microcontroller, and connected it to a generic joystick breakout module and a 1.8" 160x128 TFT Display. The joystick is controllable in both X and Y axes and has a switch you can click, similar to thumbsticks you'd find on modern controllers.
 
 ![](./images/joystick_oled.JPEG)
 ![](./images/joystick_top.JPEG)
