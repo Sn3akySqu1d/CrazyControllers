@@ -1,6 +1,6 @@
 # Crazy Controllers
 
-# *Fully configurable glove machine learning computer interface and joystick*
+# *Fully configurable machine learning computer interface flove and joystick*
 
 ARE YOU FINDING GAMES TO HARD?
 DO YOU STRUGGLE WITH ALL THOSE EXTRA KEYS?
@@ -9,6 +9,8 @@ DO YOU WANNA FEEL SPIRITUALLY CONNECTED TO YOUR SCREEN?
 Well do we have the product for you with crazy controllers.
 
 Crazy controllers presents two unique ways of controlling the game.
+
+demo: https://youtube.com/shorts/fgqZpFrSMZA
 
 ![](./images/demo.jpeg)
 
