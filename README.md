@@ -10,8 +10,6 @@ Well do we have the product for you with crazy controllers.
 
 Crazy controllers presents two unique ways of controlling the game.
 
-demo: https://youtube.com/shorts/fgqZpFrSMZA
-
 ![](./images/demo.jpeg)
 
 ## THE GLOVE.
@@ -54,3 +52,6 @@ For an individual demo of the joystick, see [this](https://www.youtube.com/watch
 ![](./images/image-1.png)
 ![](./images/image-2.png)
 ![](./images/image-3.png)
+
+
+demo: https://youtube.com/shorts/fgqZpFrSMZA
