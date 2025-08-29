@@ -4,9 +4,9 @@
 
 ARE YOU FINDING GAMES TO HARD?
 DO YOU STRUGGLE WITH ALL THOSE EXTRA KEYS?
-DO YOU WANNA FEEL SPIRITUALLY CONNECTED TO YOUR SCREEN?
+DO YOU WANNT TO FEEL SPIRITUALLY CONNECTED TO YOUR SCREEN?
 
-Well do we have the product for you with crazy controllers.
+Well do we have the device for you with crazy controllers.
 
 Crazy controllers presents two unique ways of controlling the game.
 
@@ -14,23 +14,23 @@ Crazy controllers presents two unique ways of controlling the game.
 
 ## THE GLOVE.
 
-Inspired by the Nintendo Power Glove we created a gauntlet that is able to recognise different gestures and the position of your hand and recognise the pose your hand is in using an artificial neural network. Allowing you to control your computer and games in ways never before seen making everyday more fun.
+Inspired by the Nintendo Power Glove we created a gauntlet that is able to recognise different gestures based on the position of your hand using an artificial neural network. Allowing you to control your computer and games in fun, unique ways.
 
 ![alt text](./images/image-4.png)
 
-We used potentionmeters in the analog sliders and an IMU to allow us to gain knowledge of the current state of the hand the imu providing the detail on the orientation of the hand using its accelerometer and using the analogue sliders in antagonistic pairs in order to find out the extension of each finger as fingers flex the move along the slider and when the fingers return to rest they release the slider is pulled back to 0.
+We used potentiometer analog sliders and an IMU to read the current state of the hand position, the imu providing the detail on the orientation of the hand using its accelerometer and using the analogue sliders connected to strings in antagonistic pairs to find out the extension of each finger. These sensor values are then sent along the serial monitor and parsed by a python script running on the computer which uses them to predict the current gesture based on a large csv file contianing snesor values and their corresponding gestures we collected.
 
 ![](./images/image-6.png)
 ![](./images/image-7.png)
 
-The glove uses an artificial neural network built in tensorflow to classify between different gestures, you can add your own gestures and assign them to computer inputs using a custom python gui.
+The glove uses an artificial neural network built in tensorflow to classify between the different gestures base don the sensor values, you can also add your own gestures and assign them to computer inputs directly though the python gui.
 
 
 ![](./images/image-5.png)
 
 ## THE JOYSTICK.
 
-Complementing the globes, a more portable companion was developed. We went on a little sidequest to also build this cute cube controller using an ESP32 microcontroller, and connected it to a generic joystick breakout module and a 1.8" 160x128 TFT Display. The joystick is controllable in both X and Y axes and has a switch you can click, similar to thumbsticks you'd find on modern controllers.
+Complementing the gloves, a more portable companion was developed. We went on a little sidequest to also build this cute cube controller using an ESP32 microcontroller, and connected it to a generic joystick breakout module and a 1.8" 160x128 TFT Display. The joystick is controllable in both X and Y axes and has a switch you can click, similar to thumbsticks you'd find on modern controllers.
 
 ![](./images/joystick_oled.JPEG)
 ![](./images/joystick_top.JPEG)
