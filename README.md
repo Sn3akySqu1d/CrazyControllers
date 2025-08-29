@@ -2,9 +2,9 @@
 
 # *Configurable machine learning computer interface glove and joystick*
 
-ARE YOU FINDING GAMES TO HARD?
-DO YOU STRUGGLE WITH ALL THOSE EXTRA KEYS?
-DO YOU WANNT TO FEEL SPIRITUALLY CONNECTED TO YOUR SCREEN?
+ARE YOU FINDING GAMES TO HARD?  
+DO YOU STRUGGLE WITH ALL THOSE EXTRA KEYS?  
+DO YOU WANT TO FEEL SPIRITUALLY CONNECTED TO YOUR SCREEN?  
 
 Well do we have the device for you with crazy controllers.
 
@@ -18,12 +18,12 @@ Inspired by the Nintendo Power Glove we created a gauntlet that is able to recog
 
 ![alt text](./images/image-4.png)
 
-We used potentiometer analog sliders and an IMU to read the current state of the hand position, the imu providing the detail on the orientation of the hand using its accelerometer and using the analogue sliders connected to strings in antagonistic pairs to find out the extension of each finger. These sensor values are then sent along the serial monitor and parsed by a python script running on the computer which uses them to predict the current gesture based on a large csv file contianing snesor values and their corresponding gestures we collected.
+We used potentiometer analog sliders and an IMU to read the current state of the hand position, the IMU providing the detail on the orientation of the hand using its accelerometer and using the analogue sliders connected to strings in antagonistic pairs to find out the extension of each finger. These sensor values are then sent along the serial monitor and parsed by a python script running on the computer which uses them to predict the current gesture based on a large csv file contianing sensor values and their corresponding gestures.
 
 ![](./images/image-6.png)
 ![](./images/image-7.png)
 
-The glove uses an artificial neural network built in tensorflow to classify between the different gestures base don the sensor values, you can also add your own gestures and assign them to computer inputs directly though the python gui.
+The glove uses an artificial neural network built in tensorflow to classify between the different gestures based on the sensor values, you can also add your own gestures and assign them to computer inputs directly though the python gui.
 
 
 ![](./images/image-5.png)
