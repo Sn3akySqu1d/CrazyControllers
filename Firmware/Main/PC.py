@@ -42,6 +42,7 @@ ann.fit(X_train, y_train, batch_size=256, epochs=25, validation_split=0.2)
 ser = serial.Serial(arduino_port, 9600)
 time.sleep(5)
 
+#defines main gui window
 class ConfigWindow(QWidget):
     def __init__(self, gesture_action_map, gestures, parent_window, parent=None):
         super().__init__(parent)
@@ -50,8 +51,10 @@ class ConfigWindow(QWidget):
         self.layout = QVBoxLayout()
         self.parent_window = parent_window
         self.dropdown_map = {}   
+        #list of appliable key binds
         actions = ["None", "left", "right", "click", "space", "scroll_up", "scroll_down"]
 
+        #mildly confusing either loops through gesture to apply an action via the drop down loops through gesture to save them or both
         for gesture in gestures:
             h_layout = QHBoxLayout()
             label = QLabel(f"{gesture}:")
@@ -63,6 +66,7 @@ class ConfigWindow(QWidget):
             h_layout.addWidget(dropdown)
             self.layout.addLayout(h_layout)
 
+        #button saves changes to the gesture library
         save_button = QPushButton("Save")
         save_button.clicked.connect(self.save_config)
         self.layout.addWidget(save_button)
@@ -70,12 +74,14 @@ class ConfigWindow(QWidget):
         self.setLayout(self.layout)
         self.gesture_action_map = gesture_action_map
 
+    #this is the code that changes the associated value of the gesture dictionary
     def save_config(self):
         for gesture, dropdown in self.dropdown_map.items():
             self.gesture_action_map[gesture] = dropdown.currentText()
         self.close()
         self.parent_window.show()
 
+#second defined window to visualise the neural network and add new gestures
 class PredictionWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -90,6 +96,7 @@ class PredictionWindow(QWidget):
         self.progress_bars = []
         self.labels = []
 
+        #creates a lprogress bar for every saved gesture
         for i in range(numClasses):
             bar = QProgressBar(self)
             bar.setMinimum(0)
@@ -129,7 +136,8 @@ class PredictionWindow(QWidget):
         self.automation_enabled = False
         self.last_action_time = 0
         self.action_cooldown = 1000
-
+        
+        #the gesture library that defines what action a gesture is binded to
         self.gesture_action_map = {
             "rest": "None",
             "Left": "left",
@@ -219,6 +227,7 @@ class PredictionWindow(QWidget):
         except Exception as e:
             print(f"Automation error: {e}")
 
+#functions for gesture creation initiate the neural net work
 class CollectionWindow(QWidget):
     def __init__(self):
         super().__init__()
